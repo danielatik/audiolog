@@ -879,12 +879,12 @@
         updateLocalStorage(transcriptions);
         renderTranscriptions();
 
-        // Configurar la grabación en bloques de 10 segundos
+        // Configurar la grabación en bloques de 5 segundos
         recordingInterval = setInterval(() => {
           mediaRecorder.stop();
           audioChunks = [];
           mediaRecorder.start();
-        }, 10000);
+        }, 5000);
       }
 
       async function processAudioChunk() {
