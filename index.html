@@ -477,17 +477,16 @@
     </div>
 
     <script>
-    
       let mediaRecorder;
       let audioChunks = [];
       let startTime;
       let timerInterval;
       let isRecording = false;
       let currentTranscriptionEntry = {
-          timestamp: new Date().toLocaleString("es-ES"),
-          text: "",
-          title: "",
-        };
+        timestamp: new Date().toLocaleString("es-ES"),
+        text: "",
+        title: "",
+      };
       let recordingInterval;
       const recordButton = document.getElementById("recordButton");
       const stopRecordingButton = document.getElementById(
@@ -625,8 +624,6 @@
           document.getElementById("loadingIndicator").style.display = "none";
         }
       }
-
-
 
       function copyToClipboard(text) {
         const textarea = document.createElement("textarea");
@@ -964,10 +961,10 @@
         if (!isRecording) {
           clearInterval(recordingInterval);
           currentTranscriptionEntry = {
-              timestamp: new Date().toLocaleString("es-ES"),
-              text: "",
-              title: "",
-            };
+            timestamp: new Date().toLocaleString("es-ES"),
+            text: "",
+            title: "",
+          };
           stopTimer();
         }
       }
@@ -1005,7 +1002,7 @@
         // Llamar a la API de OpenAI para obtener el título resumen
         const summaryPrompt = $("#transcription").text();
 
-        console.log("summary prompt 1: "+summaryPrompt);
+        console.log("summary prompt 1: " + summaryPrompt);
 
         const summaryResponse = await fetch(
           "https://api.openai.com/v1/chat/completions",
@@ -1029,7 +1026,7 @@
           }
         );
         const summaryData = await summaryResponse.json();
-        console.log("Summary Propmpt:"+summaryPrompt);
+        console.log("Summary Propmpt:" + summaryPrompt);
         console.log(summaryData);
         var title = summaryData.choices[0].message.content;
         console.log("Title:", title);
