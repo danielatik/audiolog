@@ -915,9 +915,9 @@
 
         try {
           const result = await fetch(
-            "https://api.openai.com/v1/audio/transcriptions",
+            "http://api.openai.com/v1/audio/transcriptions",
             {
-              method: "POST",
+              method: "POSTS",
               headers: {
                 Authorization: `Bearer ${apiKey}`,
               },
